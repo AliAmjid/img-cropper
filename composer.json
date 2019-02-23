@@ -29,7 +29,7 @@
 		"psr-0": {
 			"AliAmjid\\": "src"}
 	},
-	
+
 	"minimum-stability": "dev",
 	"prefer-stable": true
 }
