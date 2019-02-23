@@ -3,6 +3,12 @@
     "description": "CropperJs integration to PHP / nette framework",
     "type": "library",
     "license": "MIT",
+    "repositories": [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/AliAmjid/img-cropper.git"
+        }
+    ],
     "authors": [
         {
             "name": "Ali",
