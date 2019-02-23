@@ -3,15 +3,18 @@
     "description": "CropperJs integration to PHP / nette framework",
     "type": "library",
     "license": "MIT",
+    "keywords": ["nette image control","nette forms image extension", "php/jquery image resize library"],
+    "minimum-stability": "dev",
     "repositories": [
         {
             "type" : "vcs",
-            "url" : "https://github.com/AliAmjid/img-cropper.git"
+            "url" : "https://github.com/AliAmjid/img-cropper.git",
+            "reference": "origin/master"
         }
     ],
     "authors": [
         {
-            "name": "Ali",
+            "name": "Ali Amjid",
             "email": "aamjid@artex-is.cz"
         }
     ],
