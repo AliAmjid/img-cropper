@@ -4,7 +4,8 @@
     "type": "library",
     "license": "MIT",
     "keywords": ["nette-image-control","nette-forms-image-extension", "php-jquery-image-resize-library"],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type" : "vcs",
