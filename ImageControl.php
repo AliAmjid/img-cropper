@@ -24,6 +24,10 @@ class ImageControl extends HiddenField {
 		$this->setAttribute('data-ignore-aspect-ratio', '1');
 		$this->setAttribute('accept', 'image/*');
 		$this->setAttribute('class', 'image-control sr-only');
+
+		/**
+		 * thodi wala dil.. thodi wala dil ... kari menu kill..
+		 */
 	}
 
 	/**

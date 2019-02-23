@@ -26,8 +26,8 @@
 		"gumlet/php-image-resize": "1.9.*"
 	},
 	"autoload": {
-		"psr-0": {
-			"AliAmjid": "src"
+		"psr-4": {
+			"aliamjid": "src"
 		}
 	},
 
