@@ -1,0 +1,16 @@
+{
+    "name": "ali/img-cropper",
+    "description": "CropperJs integration to PHP / nette framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ali",
+            "email": "aamjid@artex-is.cz"
+        }
+    ],
+    "require": {
+        "nette/forms": "^2.4",
+        "gumlet/php-image-resize": "1.9.*"
+    }
+}
