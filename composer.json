@@ -3,7 +3,7 @@
     "description": "CropperJs integration to PHP / nette framework",
     "type": "library",
     "license": "MIT",
-    "keywords": ["nette image control","nette forms image extension", "php/jquery image resize library"],
+    "keywords": ["nette-image-control","nette-forms-image-extension", "php-jquery-image-resize-library"],
     "minimum-stability": "dev",
     "repositories": [
         {
