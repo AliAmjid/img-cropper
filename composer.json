@@ -1,5 +1,5 @@
 {
-    "name": "ali/img-cropper",
+    "name": "AliAmjid/img-cropper",
     "description": "CropperJs integration to PHP / nette framework",
     "type": "library",
     "license": "MIT",
