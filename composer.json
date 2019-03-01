@@ -1,19 +1,12 @@
 {
 	"name": "aliamjid/img-cropper",
-	"description": "CropperJs integration to PHP / nette framework",
+	"description": "CropperJs integration to PHP / Nette framework",
 	"type": "library",
 	"license": "MIT",
 	"keywords": [
 		"nette-image-control",
 		"nette-forms-image-extension",
 		"php-jquery-image-resize-library"
-	],
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/AliAmjid/img-cropper.git",
-			"reference": "origin/master"
-		}
 	],
 	"authors": [
 		{
@@ -26,11 +19,10 @@
 		"gumlet/php-image-resize": "1.9.*"
 	},
 	"autoload": {
-		"psr-4": {
-			"aliamjid": "src"
+		"psr-0": {
+			"AliAmjid": ""
 		}
 	},
-
 	"minimum-stability": "dev",
 	"prefer-stable": true
 }
