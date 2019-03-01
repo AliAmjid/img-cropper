@@ -15,7 +15,7 @@
 		}
 	],
 	"require": {
-		"nette/forms": "^2.4",
+		"nette/forms": "^2.3",
 		"gumlet/php-image-resize": "1.9.*"
 	},
 	"autoload": {
