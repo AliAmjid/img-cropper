@@ -19,8 +19,8 @@
 		"gumlet/php-image-resize": "1.9.*"
 	},
 	"autoload": {
-		"psr-0": {
-			"imgCropper": ""
+		"psr-4": {
+			"ImgCropper\\": "src/"
 		}
 	},
 	"minimum-stability": "dev",
