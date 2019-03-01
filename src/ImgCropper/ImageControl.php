@@ -1,6 +1,6 @@
 <?php
 
-namespace aliamjid\ImgCropper;
+namespace ImgCropper;
 
 use Gumlet\ImageResize;
 use Nette\Forms\Controls\HiddenField;
