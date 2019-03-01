@@ -1,9 +1,8 @@
 <?php
 
-namespace aliamjid\imgCropper\imgControl;
+namespace aliamjid\imgCropper;
 
 use Gumlet\ImageResize;
-use http\Exception\InvalidArgumentException;
 use Nette\Forms\Controls\HiddenField;
 use Nette\Forms\Form;
 use Nette\InvalidStateException;
