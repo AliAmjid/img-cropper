@@ -1,6 +1,6 @@
 <?php
 
-namespace AliAmjid\imgCropper;
+namespace aliamjid\imgCropper\imgControl;
 
 use Gumlet\ImageResize;
 use http\Exception\InvalidArgumentException;
