@@ -45,24 +45,29 @@ class ImageControl extends HiddenField {
 	public function setScaleMode(int $x, int $y) {
 		if ($y == 0) throw new \Exception('y cant be 0');
 		$this->setAttribute('data-scale', $x / $y);
+		return $this;
 	}
 
 	public function setThumbnail(string $url) {
 		$this->setAttribute('data-thumbnail', $url);
+		return $this;
 	}
 
 	public function setThumnailSize($height, $width) {
 		$this->setAttribute('data-thumbnail-width', $width);
 		$this->setAttribute('data-thumbnail-height', $height);
+		return $this;
 	}
 
 	public function ignoreAspectRatio($ignor = true) {
 		$this->setAttribute('data-ignore-aspect-ratio', (int)$ignor);
 		$this->ignoreAspectRatio = $ignor;
+		return $this;
 	}
 
 	public function ignoreAscpectRatioWhileValidate($ignor = true) {
 		$this->ignoreAspectRatioWhileValidate = $ignor;
+		return $this;
 	}
 
 	protected function attached($form) {
