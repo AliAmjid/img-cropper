@@ -54,8 +54,8 @@ class ImageControl extends HiddenField {
 	}
 
 	public function setThumnailSize($height, $width) {
-		$this->setAttribute('data-thumbnail-width', $width);
-		$this->setAttribute('data-thumbnail-height', $height);
+		$this->setAttribute('data-width', $width);
+		$this->setAttribute('data-height', $height);
 		return $this;
 	}
 
@@ -85,7 +85,7 @@ class ImageControl extends HiddenField {
 			return;
 		}
 		$this->cleanErrors();
-		if ($this->rules->validate()) {
+		if ($this->getRules()->validate()) {
 			try {
 				$image = ImageResize::createFromString(base64_decode($this->getHttpData()));
 				if ($image->getSourceHeight() % $this->scaleY == 0 && $image->getSourceWidth() % $this->scaleX == 0 || $this->ignoreAspectRatioWhileValidate || $this->ignoreAspectRatio) {
