@@ -4,26 +4,30 @@ namespace ImgCropper;
 
 use Gumlet\ImageResize;
 use Nette\Forms\Controls\HiddenField;
+use Nette\Forms\Controls\TextArea;
+use Nette\Forms\Controls\TextInput;
 use Nette\Forms\Form;
 use Nette\InvalidStateException;
 
-class ImageControl extends HiddenField {
+class ImageControl extends TextInput {
 	private $ignoreAspectRatioWhileValidate;
 	private $ignoreAspectRatio;
 	private $scaleX;
 	private $scaleY;
 
 	public function __construct($persistentValue = null, $tooltip = '') {
-		parent::__construct($persistentValue);
+		parent::__construct('');
 		$this->setAttribute('data-label', $tooltip);
 		$this->setAttribute('data-thumbnail', $persistentValue ? $persistentValue : 'https://avatars0.githubusercontent.com/u/3456749?s=160');
-		$this->setAttribute('data-thumbnail-width', '180');
-		$this->setAttribute('data-thumbnail-height', '180');
+		$this->setAttribute('data-width', '180');
+		$this->setAttribute('data-height', '180');
 		$this->setAttribute('data-aspect-ratio', '3');
 		$this->setAttribute('data-ignore-aspect-ratio', '1');
 		$this->setAttribute('accept', 'image/*');
 		$this->setAttribute('class', 'image-control sr-only');
-
+		$this->setHtmlId($this->getName());
+		$this->scaleX = 1;
+		$this->scaleY = 1;
 		/**
 		 * thodi wala dil.. thodi wala dil ... kari menu kill..
 		 */
@@ -45,6 +49,8 @@ class ImageControl extends HiddenField {
 	public function setScaleMode(int $x, int $y) {
 		if ($y == 0) throw new \Exception('y cant be 0');
 		$this->setAttribute('data-scale', $x / $y);
+		$this->scaleY = $y;
+		$this->scaleX = $x;
 		return $this;
 	}
 
@@ -53,9 +59,14 @@ class ImageControl extends HiddenField {
 		return $this;
 	}
 
-	public function setThumnailSize($height, $width) {
+	public function setSize($height, $width) {
 		$this->setAttribute('data-width', $width);
 		$this->setAttribute('data-height', $height);
+		return $this;
+	}
+
+	public function setThumbnailRatio($ratio) {
+		$this->setAttribute('data-thumbnail-ratio', $ratio);
 		return $this;
 	}
 
@@ -75,7 +86,6 @@ class ImageControl extends HiddenField {
 			if (!$form->isMethod('post')) {
 				throw new InvalidStateException('File upload requires method POST.');
 			}
-			$form->getElementPrototype()->enctype = 'multipart/form-data';
 		}
 		parent::attached($form);
 	}
@@ -84,19 +94,19 @@ class ImageControl extends HiddenField {
 		if ($this->isDisabled()) {
 			return;
 		}
+		if(empty($_POST[$this->getName()])) {
+			return;
+		}
 		$this->cleanErrors();
-		if ($this->getRules()->validate()) {
-			try {
-				$image = ImageResize::createFromString(base64_decode($this->getHttpData()));
-				if ($image->getSourceHeight() % $this->scaleY == 0 && $image->getSourceWidth() % $this->scaleX == 0 || $this->ignoreAspectRatioWhileValidate || $this->ignoreAspectRatio) {
-					$this->setValue($image);
-					$this->value = $image;
-					return true;
-				}
-			} catch (\Exception $e) {
-				return false;
+		try {
+			$img = base64_decode(explode(',',$_POST[$this->getName()])[1]);
+			$image = ImageResize::createFromString($img);
+			if ($image->getSourceHeight() % $this->scaleY == 0 && $image->getSourceWidth() % $this->scaleX == 0 || $this->ignoreAspectRatioWhileValidate || $this->ignoreAspectRatio) {
+				$this->setValue($image);
+				$this->value = $image;
+				return true;
 			}
-		} else {
+		} catch (\Exception $e) {
 			return false;
 		}
 	}
