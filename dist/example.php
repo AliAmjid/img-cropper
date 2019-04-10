@@ -17,6 +17,7 @@ if(isset($_POST['test'])) {
 	<title>Title</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="cropper.min.css">
 </head>
 <body>
 <br>
@@ -24,8 +25,8 @@ if(isset($_POST['test'])) {
 		<input type="text" name="test" id="btn-2" class="image-control sr-only"
 				 data-label="Test 1"
 				 data-thumbnail="https://avatars0.githubusercontent.com/u/3456749?s=160"
-				 data-width="500"
-				 data-height="500"
+				 data-width="800"
+				 data-height="300"
 				 data-thumbnail-ratio="0.5"
 				 data-scale-x="1"
 				 data-scale-y="1"
@@ -35,5 +36,6 @@ if(isset($_POST['test'])) {
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-<script src="ImageControl.all.min.js"></script>
+<script src="cropper.min.js"></script>
+<script src="ImageControl.js"></script>
 </html>

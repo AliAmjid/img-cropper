@@ -67,10 +67,10 @@ var ImageControl = function () {
 			});
 
 			$modal.on('shown.bs.modal', function () {
-				var ratio = scaleX / scaleY;
+				var ratio = width / height;
 				cropper = new Cropper(image, {
 					aspectRatio: ratio,
-					viewMode: 1,
+					viewMode: 2,
 				});
 				$('#'+id+'-rotate').click(function () {
 					cropper.rotate(45);

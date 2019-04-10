@@ -28,9 +28,6 @@ class ImageControl extends TextInput {
 		$this->setHtmlId($this->getName());
 		$this->scaleX = 1;
 		$this->scaleY = 1;
-		/**
-		 * thodi wala dil.. thodi wala dil ... kari menu kill..
-		 */
 	}
 
 	/**
