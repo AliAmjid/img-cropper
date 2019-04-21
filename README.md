@@ -52,8 +52,9 @@ class UserForm extends BaseForm {
 # How to install? 
 You need to add javascript file to your app 
 
-    <link rel="stylesheet" href="cropper.min.css">
-File path is `img-cropper/dist/cropper.min.css`
+    <link rel="stylesheet" href="cropper.min.all.js">
+File path is `img-cropper/dist/cropper.min.all.js`
+You also need bootstrap and jQuery. 
 
 I recommend to also add this to your BaseForm 
 
