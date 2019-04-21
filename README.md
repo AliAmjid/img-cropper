@@ -3,10 +3,7 @@
 
 ![](https://i.imgur.com/xxOUXAm.jpg)
 **Example of usage**
-Library can be use as Nette control for picking image. 
-    
-I want to include code in a  [markdown gist on github](https://gist.github.com/derekdreery/8933123), and cannot work out how to do syntax highlighting.
-
+Library can be use as Nette control for picking / croping image forexample for profile picture and etc. 
 github flavoured markdown - e.g.
 
 
@@ -65,4 +62,7 @@ Now you are ready to use
   ```php
   $this->addImage();
   ```
+  
+   # Dont use nette? 
+   its possible to use it just with normal php. Look at example.php
   
