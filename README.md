@@ -1,5 +1,9 @@
-# How it looks like?
+Integration of [gumlet/php-image-resize] and [cropperjs] to Nette Froms
 
+   [gumlet/php-image-resize]: <https://github.com/gumlet/php-image-resize>
+   [cropperjs]: <https://fengyuanchen.github.io/cropperjs/>
+
+# How it looks like?
 
 ![](https://i.imgur.com/xxOUXAm.jpg)
 **Example of usage**
@@ -38,7 +42,7 @@ class UserForm extends BaseForm {
  //Check if picture is ok  
  if($values->profile_picture instanceof ImageResize) {  
   //Save picture  
-  //$values->profile_picture is is Gumlet/ImageResize see library for more info
+  //$values->profile_picture is [gumlet/php-image-resize] see library for more info
   $user->profile_picture = $this->imageService->saveProfilePicture($values->profile_picture);  
  }  //Do other stuff like updateing database
   $this->userMapper->updateEntity($user);  
